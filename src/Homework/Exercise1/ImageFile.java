@@ -2,7 +2,7 @@ package Homework.Exercise1;
 
 public class ImageFile extends File {
 
-    public String painter;
+    private String painter;
 
     public String getPainter() {
         return painter;
@@ -17,11 +17,11 @@ public class ImageFile extends File {
     }
 
     public void picture() {
-        System.out.println(name + " - picture");
+        System.out.println(getName() + " - picture");
     }
 
     @Override
     public String toString() {
-        return name + ", painter, " + painter;
+        return getName() + ", painter, " + painter;
     }
 }

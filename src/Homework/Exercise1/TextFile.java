@@ -18,11 +18,11 @@ public class TextFile extends File {
     }
 
     public void numberOfPages() {
-        System.out.println(name + " - number Of pages");
+        System.out.println(getName() + " - number Of pages");
     }
 
     @Override
     public String toString() {
-        return name + ", book: " + book;
+        return getName() + ", book: " + book;
     }
 }

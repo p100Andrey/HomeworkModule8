@@ -17,11 +17,11 @@ public class AudioFile extends File {
     }
 
     public void play() {
-        System.out.println(name + " is played");
+        System.out.println(getName() + " is played");
     }
 
     @Override
     public String toString() {
-        return name + ", author: " + author;
+        return getName() + ", author: " + author;
     }
 }
