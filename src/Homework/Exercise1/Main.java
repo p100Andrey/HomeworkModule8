@@ -2,9 +2,7 @@ package Homework.Exercise1;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -59,14 +57,16 @@ public class Main {
     }
 
     public static void sorting(List<File> list) {
+        GradeComparator gc = new GradeComparator();
         for (File file : list) {
             for (File file1 : list) {
-                if (file.getName().compareTo(file1.getName()) < 0) {
-                    String temp = file1.getName();
-                    file1.setName(file.getName());
-                    file.setName(temp);
+                if (gc.compare(file, file1) < 0) {
+                    File temp = file1;
+                    file1 = file;
+                    file = temp;
                 }
             }
         }
     }
+
 }
