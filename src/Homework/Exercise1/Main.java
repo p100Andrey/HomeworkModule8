@@ -8,21 +8,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<File> spisokFiles = new ArrayList<>();
+        GradeComparator gc = new GradeComparator();
+        TreeSet<File> spisokFiles = new TreeSet<>(gc);
+        List<ImageFile> imageFiles = new ArrayList<>();
+        List<AudioFile> audioFiles = new ArrayList<>();
+        List<TextFile> textFiles = new ArrayList<>();
 
-        spisokFiles.add(doTextFile("Книга 1"));
-        spisokFiles.add(doTextFile("Книга 2"));
-        spisokFiles.add(doTextFile("Книга 3"));
+        textFiles.add(doTextFile("Книга 1"));
+        textFiles.add(doTextFile("Книга 2"));
+        textFiles.add(doTextFile("Книга 3"));
 
-        spisokFiles.add(doAudioFile("Аудиофайл 1"));
-        spisokFiles.add(doAudioFile("Аудиофайл 2"));
-        spisokFiles.add(doAudioFile("Аудиофайл 3"));
+        audioFiles.add(doAudioFile("Аудиофайл 1"));
+        audioFiles.add(doAudioFile("Аудиофайл 2"));
+        audioFiles.add(doAudioFile("Аудиофайл 3"));
 
-        spisokFiles.add(doImageFile("Картина 1"));
-        spisokFiles.add(doImageFile("Картина 2"));
-        spisokFiles.add(doImageFile("Картина 3"));
+        imageFiles.add(doImageFile("Картина 1"));
+        imageFiles.add(doImageFile("Картина 2"));
+        imageFiles.add(doImageFile("Картина 3"));
 
-        sorting(spisokFiles);
+        spisokFiles.addAll(textFiles);
+        spisokFiles.addAll(imageFiles);
+        spisokFiles.addAll(audioFiles);
+
         Table table1 = new Table();
         table1.showTable(spisokFiles);
     }
@@ -55,18 +62,4 @@ public class Main {
         imageFile.setPainter(temp);
         return imageFile;
     }
-
-    public static void sorting(List<File> list) {
-        GradeComparator gc = new GradeComparator();
-        for (File file : list) {
-            for (File file1 : list) {
-                if (gc.compare(file, file1) < 0) {
-                    File temp = file1;
-                    file1 = file;
-                    file = temp;
-                }
-            }
-        }
-    }
-
 }

@@ -5,7 +5,7 @@ import java.util.*;
 
 
 public class Table {
-    public void showTable(List<File> anyList) {
+    public void showTable(Collection<File> anyList) {
         String gorizontalLine = new String(new char[77]).replace("\0", "-");
         System.out.println(gorizontalLine);
         System.out.println("|  Name            |  Book            |  Author          |  Painter         |");
