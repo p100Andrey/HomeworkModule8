@@ -1,7 +1,5 @@
 package Homework.Exercise1;
 
-import javax.swing.*;
-import javax.swing.table.TableModel;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
