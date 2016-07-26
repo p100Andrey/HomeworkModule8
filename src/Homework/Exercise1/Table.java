@@ -22,16 +22,14 @@ public class Table {
         System.out.printf("|\t%-16.16s", file.getName());
         if (file instanceof ImageFile) {
             printCell("", "", ((ImageFile) file).getPainter());
-            System.out.println("|");
         }
         if (file instanceof AudioFile) {
             printCell("", ((AudioFile) file).getAuthor(), "");
-            System.out.println("|");
         }
         if (file instanceof TextFile) {
             printCell(((TextFile) file).getBook(), "", "");
-            System.out.println("|");
         }
+        System.out.println("|");
         System.out.println(gorizontalLine);
     }
 
